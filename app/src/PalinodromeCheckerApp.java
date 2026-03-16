@@ -1,36 +1,44 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
+
 public class PalinodromeCheckerApp {
     static void main() {
 
-                String text = "racecar";
 
-                Deque<Character> deque = new LinkedList<>();
+        String text = "racecar";
 
-                for (int i = 0; i < text.length(); i++) {
-                    deque.addLast(text.charAt(i));
-                }
+        Deque<Character> deque = new LinkedList<>();
 
-                boolean isPalindrome = true;
+        for (int i = 0; i < text.length(); i++) {
+            deque.addLast(text.charAt(i));
+        }
 
-                while (deque.size() > 1) {
-                    char front = deque.removeFirst();
-                    char rear = deque.removeLast();
+        boolean isPalindrome = true;
 
-                    if (front != rear) {
-                        isPalindrome = false;
-                        break;
-                    }
-                }
+        while (deque.size() > 1) {
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
 
-                if (isPalindrome) {
-                    System.out.println(text + " is a Palindrome");
-                } else {
-                    System.out.println(text + " is not a Palindrome");
-                }
+            if (front != rear) {
+                isPalindrome = false;
+                break;
             }
         }
+
+        if (isPalindrome) {
+            System.out.println(text + " is a Palindrome");
+        } else {
+            System.out.println(text + " is not a Palindrome");
+        }
+    }
+}
+
+
+
+
+
+
 
 
 
