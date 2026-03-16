@@ -1,26 +1,24 @@
-import java.util.Stack;
-import java.util.Queue;
+import java.util.Deque;
 import java.util.LinkedList;
 
 public class PalinodromeCheckerApp {
     static void main() {
 
+                String text = "racecar";
 
-                String text = "madam";
-
-                Stack<Character> stack = new Stack<>();
-                Queue<Character> queue = new LinkedList<>();
+                Deque<Character> deque = new LinkedList<>();
 
                 for (int i = 0; i < text.length(); i++) {
-                    char ch = text.charAt(i);
-                    stack.push(ch);
-                    queue.add(ch);
+                    deque.addLast(text.charAt(i));
                 }
 
                 boolean isPalindrome = true;
 
-                while (!stack.isEmpty()) {
-                    if (stack.pop() != queue.remove()) {
+                while (deque.size() > 1) {
+                    char front = deque.removeFirst();
+                    char rear = deque.removeLast();
+
+                    if (front != rear) {
                         isPalindrome = false;
                         break;
                     }
@@ -33,6 +31,7 @@ public class PalinodromeCheckerApp {
                 }
             }
         }
+
 
 
 
